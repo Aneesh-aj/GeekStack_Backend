@@ -16,8 +16,9 @@ app.get('/', async (req, res) => {
       params: { location, radius, type, key },
     });
     console.log(" the response",response)
-    res.json(response);
+    res.status(200).json(response);
   } catch (error) {
+    console.log(error)
     res.status(500).send('Error fetching data from Google Maps');
   }
 });
