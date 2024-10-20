@@ -10,8 +10,8 @@ app.use(cors());
 
 app.get('/', async (req, res) => {
   try {
-    const { location, radius, type, key } = req.params;
-    console.log( location, radius, type ,key)
+    const { location, radius, type, key } = req.query;
+    console.log( location, radius, type ,key , req.params)
     const response = await axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json`, {
       params: { location, radius, type, key },
     });
