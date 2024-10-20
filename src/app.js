@@ -3,6 +3,9 @@ const axios = require('axios');
 const app = express();
 const port =  3000;
 
+app.use(cors());
+
+
 app.get('/api/maps/nearbysearch', async (req, res) => {
   try {
     const { location, radius, type, key } = req.query;
