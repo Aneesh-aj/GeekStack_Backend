@@ -14,7 +14,8 @@ app.get('/api/maps/nearbysearch', async (req, res) => {
     const response = await axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json`, {
       params: { location, radius, type, key },
     });
-    res.json(response.data);
+    console.log(" the response",response)
+    res.json(response);
   } catch (error) {
     res.status(500).send('Error fetching data from Google Maps');
   }
